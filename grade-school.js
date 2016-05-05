@@ -10,11 +10,11 @@ class School {
   }
 
   add(name, studentGrade) {
-    if (this.class[studentGrade] !== undefined) {
+    if (this.class[studentGrade] === undefined) {
+      this.class[studentGrade] = [name]
+    } else {
       this.class[studentGrade] =
       this.class[studentGrade].concat([name]).sort()
-    } else {
-      this.class[studentGrade] = [name]
     }
   }
 
