@@ -4,18 +4,17 @@ class School {
   constructor() {
     this.class = {}
   }
+
   roster() {
     return this.class
   }
 
   add(name, studentGrade) {
-    if (this.studentGrade === studentGrade) {
-      this.name += ", " + name
-      this.class[this.studentGrade] = this.name.split(", ")
+    if (this.class[studentGrade] !== undefined) {
+      this.class[studentGrade] =
+      this.class[studentGrade].concat([name]).sort()
     } else {
-      this.name = name
-      this.studentGrade = studentGrade
-      this.class[this.studentGrade] = [this.name]
+      this.class[studentGrade] = [name]
     }
   }
 
